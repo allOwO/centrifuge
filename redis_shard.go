@@ -222,6 +222,7 @@ func NewRedisShard(_ *Node, conf RedisShardConfig) (*RedisShard, error) {
 		AlwaysPipelining: true,
 		AlwaysRESP2:      conf.ForceRESP2,
 		MaxFlushDelay:    100 * time.Microsecond,
+		ClientSetInfo:    rueidis.DisableClientSetInfo,
 		Dialer: net.Dialer{
 			Timeout: conf.ConnectTimeout,
 		},
